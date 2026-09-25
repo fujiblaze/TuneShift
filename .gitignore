@@ -1,0 +1,24 @@
+node_modules/
+.tmp/
+dist/
+
+# Local secrets and packaging keys
+.env
+.env.*
+*.key
+*.p12
+*.pfx
+
+# Local packaging keys and browser artifacts
+*.pem
+*.crx
+
+# Local scratch notes
+pitch.txt
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+PUBLISH_PUBLIC_TO_GITHUB.cmd

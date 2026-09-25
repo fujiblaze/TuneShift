@@ -1,0 +1,89 @@
+{
+  "manifest_version": 3,
+  "name": "TuneShift - Speed & Pitch Controller",
+  "short_name": "TuneShift",
+  "version": "1.20.3",
+  "description": "Smooth speed, whole-step transpose, fractional pitch, volume and EQ controls for media in your current tab.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "offscreen",
+    "sidePanel"
+  ],
+  "optional_permissions": [
+    "tabCapture"
+  ],
+  "side_panel": { "default_path": "popup/popup.html?sidebar=1" },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open TuneShift",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "options_page": "options/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "audio/soundtouch-processor.js",
+        "audio/realtime-bpm-processor.js",
+        "assets/fonts/DSEG7Classic-Bold.woff2"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "commands": {
+    "speed-up": {
+      "suggested_key": {
+        "default": "Alt+Shift+Up"
+      },
+      "description": "Increase playback speed"
+    },
+    "speed-down": {
+      "suggested_key": {
+        "default": "Alt+Shift+Down"
+      },
+      "description": "Decrease playback speed"
+    },
+    "toggle-playback": {
+      "suggested_key": {
+        "default": "Alt+Shift+Space"
+      },
+      "description": "Play or pause media"
+    },
+    "reset-controls": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Reset speed and audio controls"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://open.spotify.com/*"
+      ],
+      "js": [
+        "content/spotify-bootstrap.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

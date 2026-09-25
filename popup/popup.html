@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" class="controller-view">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TuneShift</title>
+    <script src="appearance.js"></script>
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="../assets/ui/dropdowns.css" />
+    <link rel="stylesheet" href="../assets/ui/viewport.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true"><symbol id="icon-pencil" viewBox="0 0 24 24">
+  <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+  <path d="m15 5 4 4" />
+</symbol><symbol id="icon-arrow-left" viewBox="0 0 24 24">
+  <path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" />
+</symbol><symbol id="icon-audio-lines" viewBox="0 0 24 24">
+  <path d="M2 10v3" />
+  <path d="M6 6v11" />
+  <path d="M10 3v18" />
+  <path d="M14 8v7" />
+  <path d="M18 5v13" />
+  <path d="M22 10v3" />
+</symbol><symbol id="icon-bookmark" viewBox="0 0 24 24">
+  <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
+</symbol><symbol id="icon-bookmark-plus" viewBox="0 0 24 24">
+  <path d="M12 7v6" />
+  <path d="M15 10H9" />
+  <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
+</symbol><symbol id="icon-chevron-down" viewBox="0 0 24 24">
+  <path d="m6 9 6 6 6-6" />
+</symbol><symbol id="icon-cloud-moon" viewBox="0 0 24 24">
+  <path d="M13 16a3 3 0 0 1 0 6H7a5 5 0 1 1 4.9-6z" />
+  <path d="M18.376 14.512a6 6 0 0 0 3.461-4.127c.148-.625-.659-.97-1.248-.714a4 4 0 0 1-5.259-5.26c.255-.589-.09-1.395-.716-1.248a6 6 0 0 0-4.594 5.36" />
+</symbol><symbol id="icon-external-link" viewBox="0 0 24 24">
+  <path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+</symbol><symbol id="icon-graduation-cap" viewBox="0 0 24 24">
+  <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+  <path d="M22 10v6" />
+  <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+</symbol><symbol id="icon-list-music" viewBox="0 0 24 24">
+  <path d="M16 5H3" />
+  <path d="M11 12H3" />
+  <path d="M11 19H3" />
+  <path d="M21 16V5" />
+  <circle cx="18" cy="16" r="3" />
+</symbol><symbol id="icon-mic" viewBox="0 0 24 24">
+  <path d="M12 19v3" />
+  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+  <rect x="9" y="2" width="6" height="13" rx="3" />
+</symbol><symbol id="icon-minus" viewBox="0 0 24 24">
+  <path d="M5 12h14" />
+</symbol><symbol id="icon-moon-star" viewBox="0 0 24 24">
+  <path d="M18 5h4" />
+  <path d="M20 3v4" />
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</symbol><symbol id="icon-pause" viewBox="0 0 24 24">
+  <rect x="14" y="3" width="5" height="18" rx="1" />
+  <rect x="5" y="3" width="5" height="18" rx="1" />
+</symbol><symbol id="icon-play" viewBox="0 0 24 24">
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+</symbol><symbol id="icon-plus" viewBox="0 0 24 24">
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</symbol><symbol id="icon-power" viewBox="0 0 24 24">
+  <path d="M12 2v10" />
+  <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+</symbol><symbol id="icon-repeat" viewBox="0 0 24 24">
+  <path d="m17 2 4 4-4 4" />
+  <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+  <path d="m7 22-4-4 4-4" />
+  <path d="M21 13v1a4 4 0 0 1-4 4H3" />
+</symbol><symbol id="icon-rotate-ccw" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" />
+</symbol><symbol id="icon-rotate-cw" viewBox="0 0 24 24">
+  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+  <path d="M21 3v5h-5" />
+</symbol><symbol id="icon-settings" viewBox="0 0 24 24">
+  <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+  <circle cx="12" cy="12" r="3" />
+</symbol><symbol id="icon-shield-alert" viewBox="0 0 24 24">
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</symbol><symbol id="icon-sliders-horizontal" viewBox="0 0 24 24">
+  <path d="M10 5H3" />
+  <path d="M12 19H3" />
+  <path d="M14 3v4" />
+  <path d="M16 17v4" />
+  <path d="M21 12h-9" />
+  <path d="M21 19h-5" />
+  <path d="M21 5h-7" />
+  <path d="M8 10v4" />
+  <path d="M8 12H3" />
+</symbol><symbol id="icon-smile" viewBox="0 0 24 24">
+  <path d="M15 10V9" />
+  <path d="M16.472 15a6 6 0 01-8.943 0" />
+  <path d="M9 10V9" />
+  <circle cx="12" cy="12" r="10" />
+</symbol><symbol id="icon-sun" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</symbol><symbol id="icon-trash" viewBox="0 0 24 24">
+  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+  <path d="M3 6h18" />
+  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+</symbol><symbol id="icon-turtle" viewBox="0 0 24 24">
+  <path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z" />
+  <path d="M4.82 7.9 8 10" />
+  <path d="M15.18 7.9 12 10" />
+  <path d="M16.93 10H20a2 2 0 0 1 0 4H2" />
+</symbol><symbol id="icon-x" viewBox="0 0 24 24">
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</symbol></svg>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">
+          <svg class="ui-icon"><use href="#icon-audio-lines"></use></svg>
+        </div>
+        <div class="brand-copy">
+          <div class="brand-row">
+            <h1>TuneShift</h1>
+            <span class="version">v1.20.3</span>
+            <span class="media-count" id="media-count" hidden></span>
+          </div>
+          <div class="tab-status" id="tab-status">
+            <i class="status-dot"></i>
+            <img id="site-icon" class="site-icon" alt="" hidden referrerpolicy="no-referrer" />
+            <span id="site-name">Finding media…</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <details class="tab-effects-menu" id="tab-effects-menu" hidden>
+            <summary class="icon-button" id="tab-effects-status" title="Tab effects" aria-label="Tab effects">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v4m5-7v10m5-7v4"/></svg>
+            </summary>
+            <div class="drm-note" id="drm-note" hidden>
+              <span id="drm-message" role="status"></span>
+              <button class="text-button" id="tab-effects-toggle" type="button" aria-pressed="false">Enable tab effects</button>
+              <button class="text-button" id="refresh-media" type="button">Refresh tab</button>
+            </div>
+          </details>
+          <button class="icon-button" id="copy-tuning" title="Copy tuning" aria-label="Copy tuning"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg></button>
+          <button class="icon-button" id="paste-tuning" title="Paste tuning" aria-label="Paste tuning"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 14h10M16 4h2a2 2 0 0 1 2 2v1.344m-3 10.656 4-4-4-4M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 1.793-1.113"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></button>
+          <button class="icon-button" id="open-history" title="Open saved audio pages" aria-label="Open saved audio pages">
+            <svg aria-hidden="true"><use href="#icon-list-music"></use></svg>
+          </button>
+          <label class="power-switch" id="power-switch" title="Turn TuneShift off">
+            <input id="extension-enabled" type="checkbox" checked aria-label="Enable TuneShift" />
+            <span><svg aria-hidden="true"><use href="#icon-power"></use></svg></span>
+          </label>
+          <button class="icon-button" id="open-settings" title="Open settings" aria-label="Open settings">
+            <svg aria-hidden="true"><use href="#icon-settings"></use></svg>
+          </button>
+        </div>
+      </header>
+
+
+
+      <section class="display-grid" aria-label="Primary controls">
+        <article class="display-card speed-card">
+          <div class="speed-page" id="speed-main-page">
+          <div class="card-label"><button class="speed-label-button" id="open-bpm-panel" type="button" aria-label="Open BPM controls" aria-controls="speed-bpm-page" aria-expanded="false">Speed</button><span class="speed-card-meta"><span class="bpm-preview"><output id="speed-bpm-preview" aria-label="BPM unavailable">---</output><small>BPM</small></span><button class="mini-reset" data-reset="speed" title="Reset speed" aria-label="Reset speed"><svg><use href="#icon-rotate-ccw"></use></svg></button></span></div>
+          <div class="digital-row">
+            <button class="step-button" data-step="speed" data-delta="-0.01" aria-label="Decrease speed"><svg><use href="#icon-minus"></use></svg></button>
+            <span class="digital-value-cluster speed-value-cluster"><output class="segment-display speed-digits" id="speed-value" data-shadow="8.88" data-value="1.00" aria-label="Current speed"></output><span class="digital-unit">×</span></span>
+            <button class="step-button" data-step="speed" data-delta="0.01" aria-label="Increase speed"><svg><use href="#icon-plus"></use></svg></button>
+          </div>
+          <input id="speed" type="range" min="0.25" max="4" step="0.01" value="1" aria-label="Playback speed" />
+          <div class="range-labels"><span>0.25</span><span>2.00</span><span>4.00</span></div>
+          </div>
+          <div class="speed-page speed-bpm-page" id="speed-bpm-page" hidden>
+            <div class="card-label"><button class="speed-back-button" id="close-bpm-panel" type="button" aria-label="Back to speed controls">‹ Speed</button></div>
+            <div class="bpm-indicator" id="bpm-indicator" title="Listening for the song tempo"><input class="bpm-input" id="bpm-value" type="text" value="---" inputmode="decimal" maxlength="6" aria-label="Exact effective BPM" title="Click to enter BPM" /><small>BPM</small><button id="bpm-status-text" type="button" hidden aria-label="BPM status. Click to enter BPM.">Detecting...</button></div>
+            <button class="bpm-tap-button" id="tap-bpm" type="button" title="Tap along with the beat to set BPM">Tap BPM</button>
+            <div class="bpm-corrections" role="group" aria-label="Correct detected BPM"><button id="bpm-half" type="button" title="Halve the current BPM">½ BPM</button><button id="bpm-double" type="button" title="Double the current BPM">2× BPM</button></div>
+          </div>
+        </article>
+
+        <article class="display-card transpose-card">
+          <div class="card-label"><span>Transpose</span><button class="mini-reset" data-reset="transpose" title="Reset transpose" aria-label="Reset transpose"><svg><use href="#icon-rotate-ccw"></use></svg></button></div>
+          <div class="digital-row">
+            <button class="step-button" data-step="transpose" data-delta="-1" aria-label="Transpose down"><svg><use href="#icon-minus"></use></svg></button>
+            <span class="digital-value-cluster"><span class="digital-sign transpose-sign" id="transpose-sign" aria-hidden="true">+</span><span class="editable-digits transpose-digits"><output class="segment-display digital-display" id="transpose-display" data-shadow="18" data-value="0" aria-hidden="true"></output><input class="digital-input" id="transpose-value" type="text" value="0" inputmode="numeric" aria-label="Exact transpose value" title="Click to type an exact whole-step value" /></span><span class="digital-unit">st</span></span>
+            <button class="step-button" data-step="transpose" data-delta="1" aria-label="Transpose up"><svg><use href="#icon-plus"></use></svg></button>
+          </div>
+          <input id="transpose" type="range" min="-12" max="12" step="1" value="0" aria-label="Whole-step transpose in semitones" />
+          <div class="range-labels"><span>−12</span><span>0</span><span>+12</span></div>
+        </article>
+
+        <article class="display-card pitch-card">
+          <div class="card-label"><span>Pitch</span><span class="pitch-card-meta"><span class="pitch-hz"><output id="pitch-hz">440.0</output><small>Hz</small></span><button class="mini-reset" data-reset="pitch" title="Reset pitch" aria-label="Reset pitch"><svg><use href="#icon-rotate-ccw"></use></svg></button></span></div>
+          <div class="digital-row">
+            <button class="step-button" data-step="pitch" data-delta="-0.05" aria-label="Lower pitch"><svg><use href="#icon-minus"></use></svg></button>
+            <span class="digital-value-cluster"><span class="digital-sign pitch-sign" id="pitch-sign" aria-hidden="true"></span><span class="editable-digits pitch-digits"><output class="segment-display digital-display" id="pitch-display" data-shadow="1.88" data-value=".00" aria-hidden="true"></output><input class="digital-input" id="pitch-value" type="text" value=".00" inputmode="decimal" aria-label="Exact fractional pitch value" title="Click to type a value from -1.00 to +1.00" /></span></span>
+            <button class="step-button" data-step="pitch" data-delta="0.05" aria-label="Raise pitch"><svg><use href="#icon-plus"></use></svg></button>
+          </div>
+          <input id="pitch" type="range" min="-1" max="1" step="0.01" value="0" aria-label="Fractional pitch in semitones" />
+          <div class="range-labels"><span>−1.00</span><span>.00</span><span>+1.00</span></div>
+        </article>
+      </section>
+
+      <section class="transport" aria-label="Playback controls">
+        <button class="transport-button" data-seek="back" title="Back 10 seconds">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 12 18zM22 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 22 18z"/></svg><small>10</small>
+        </button>
+        <button class="play-button" id="play-toggle" title="Play or pause" aria-label="Play or pause">
+          <svg class="play-icon"><use href="#icon-play"></use></svg>
+          <svg class="pause-icon"><use href="#icon-pause"></use></svg>
+        </button>
+        <button class="transport-button" data-seek="forward" title="Forward 10 seconds">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18zM2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z"/></svg><small>10</small>
+        </button>
+        <div class="time-panel">
+          <div class="transport-readout">
+            <div class="transport-indicators" role="group" aria-label="Playback settings">
+              <span class="deck-icon deck-" id="deck-loop" role="img" aria-label="A-B loop: off" title="A-B loop: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-3-3M19 17H5l3 3M19 7v5M5 17v-5"/><text x="12" y="15">AB</text></svg></span>
+              <span class="deck-icon deck-tempo deck-split" id="deck-tempo" role="img" aria-label="Tempo: original" title="Tempo: original"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="split-low" d="M2 12h3l3-7 3 14M3 17v5m-2-2 2 2 2-2"/><path class="split-high" d="m13 19 3-7h6M20 7V2m-2 2 2-2 2 2"/></svg></span>
+              <span class="deck-icon deck-pitch deck-split" id="deck-pitch" role="img" aria-label="Pitch: original" title="Pitch: original"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="split-low" d="M12 13v5c0 2-2 3.5-4.5 3.5S3 20.5 3 19s2-3.5 4.5-3.5c1.8 0 3.3.6 4.5 1.5"/><path class="split-high" d="M12 10V3l8-2v6l-8 2"/></svg></span>
+              <span class="deck-icon deck-volume" id="deck-max" role="img" aria-label="Maximum volume: off" title="Maximum volume: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9h3l5-5v16l-5-5H2z"/><path class="volume-125" d="M14 10v4"/><path class="volume-150" d="M18 7v10"/><path class="volume-200" d="M22 4v16"/><path class="volume-mute" d="m16 9 6 6m0-6-6 6"/></svg></span>
+              <span class="deck-icon deck-balance" id="deck-balance" role="img" aria-label="Full left or right balance: off" title="Full left or right balance: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="balance-left" d="M9 3a9.5 9.5 0 0 0 0 18"/><path class="balance-right" d="M15 3a9.5 9.5 0 0 1 0 18"/><path class="balance-swap" d="M12 9v6"/></svg></span>
+              <span class="deck-icon deck-repeat" id="deck-repeat" role="img" aria-label="Repeat: off" title="Repeat: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 2 4 4-4 4M4 11V9a3 3 0 0 1 3-3h13M8 22l-4-4 4-4M20 13v2a3 3 0 0 1-3 3H4"/><g id="deck-repeat-count" hidden><circle cx="18" cy="18" r="5.3"/><text x="18" y="18" dy=".35em" id="deck-repeat-count-value"></text></g></svg></span>
+              <span class="deck-icon deck-eq" id="deck-eq" role="img" aria-label="EQ: off" title="EQ: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v5m0 4v9M12 3v10m0 4v4M19 3v3m0 4v11M2 8h6v4H2zM9 13h6v4H9zM16 6h6v4h-6z"/></svg></span>
+              <span class="deck-icon deck-eq" id="deck-mono" role="img" aria-label="Mono: off" title="Mono: off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 5 4-5 4m20-8-5 4 5 4"/><circle cx="12" cy="12" r="3"/></svg></span>
+              <span class="deck-icon deck-progress" id="deck-progress" role="img" aria-label="Playback progress unavailable" title="Playback progress unavailable"><svg viewBox="0 0 32 32" aria-hidden="true"><circle class="progress-track" cx="16" cy="16" r="13" /><circle class="progress-fill" cx="16" cy="16" r="13" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 16 16)" /><text id="deck-progress-value" x="16" y="16" dominant-baseline="central">0%</text></svg></span>
+            </div>
+          <button type="button" class="time-readout" id="time-display" aria-label="Show decimal elapsed time"><span class="time-value" id="current-time" data-shadow="88:88">00:00</span><i></i><span class="time-value" id="duration" data-shadow="88:88">00:00</span><span id="time-decimal" hidden aria-hidden="true"><span id="time-decimal-digits" data-shadow="88.88"></span><span id="time-decimal-unit">mins</span></span></button>
+          </div>
+          <input id="media-progress" class="media-progress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Media progress" />
+        </div>
+      </section>
+
+      <section class="section presets-section">
+        <div class="section-heading">
+          <div class="profile-heading"><h2>Quick profiles</h2><div class="profile-pagination"><button id="profiles-prev" type="button" aria-label="Previous profiles" title="Previous profiles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span id="profile-page" aria-live="polite">1/2</span><button id="profiles-next" type="button" aria-label="Next profiles" title="Next profiles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div>
+          <span class="profile-actions"><button class="text-button" id="save-profile">Save current</button><button class="text-button" id="reset-all">Reset all</button></span>
+        </div>
+        <div class="preset-row" id="preset-row"></div>
+      </section>
+
+<div class="practice-grid">      <section class="section audio-section">
+        <div class="control-head">
+          <label for="volume">Output</label>
+          <span class="output-actions"><output id="volume-value">100%</output><button class="mini-reset" data-reset="volume" title="Reset volume" aria-label="Reset volume"><svg><use href="#icon-rotate-ccw"></use></svg></button></span>
+        </div>
+        <input id="volume" type="range" min="0" max="200" step="1" value="100" />
+        <div class="range-labels"><span>Mute</span><span id="volume-mid-label">100%</span><span id="volume-max-label">Boost</span></div>
+          <div class="balance-control">
+            <div class="control-head"><label for="balance">Balance</label><span class="output-actions"><output id="balance-value">Center</output><button class="mini-reset" data-reset="balance" title="Reset balance" aria-label="Reset balance"><svg><use href="#icon-rotate-ccw"></use></svg></button></span></div>
+            <input id="balance" type="range" min="-1" max="1" step="0.05" value="0" />
+            <div class="range-labels"><span>L</span><span>C</span><span>R</span></div>
+          </div>
+      </section>      <section class="section loop-section">
+        <div class="section-heading">
+          <h2>A–B loop</h2>
+          <span class="loop-heading-actions"><button class="text-button" id="edit-loop" title="Edit exact loop times">Edit</button><button class="text-button" id="clear-loop">Clear</button></span>
+        </div>
+        <div class="loop-controls">
+          <button id="set-loop-a"><span>A</span><output id="loop-a-value">--:--</output></button>
+
+          <button id="set-loop-b"><span>B</span><output id="loop-b-value">--:--</output></button>
+        </div>
+        <button class="practice-button" id="toggle-loop" aria-pressed="false">Enable loop</button>
+      </section><section class="section repeat-section">
+        <div class="section-heading"><h2>Repeat</h2><svg class="ui-icon"><use href="#icon-repeat"></use></svg></div>
+        <select id="repeat-mode" aria-label="Repeat mode"><option value="off">Off</option><option value="track">This track</option><option value="once">Repeat once</option><option value="twice">Repeat twice</option><option value="five">Repeat 5 times</option></select>
+        <small>A–B loop takes priority</small>
+      </section></div>
+<section class="section cue-section"><div class="section-heading"><h2>Jump to cue</h2><button class="text-button" id="add-cue"><svg class="ui-icon"><use href="#icon-bookmark-plus"></use></svg>Add cue</button></div><div id="cue-list" class="cue-list"></div></section>
+
+      <details class="studio" id="studio">
+        <summary>
+          <span class="studio-title"><svg><use href="#icon-sliders-horizontal"></use></svg>Studio controls</span>
+          <span class="audio-badge" id="audio-badge">Direct</span>
+          <svg><use href="#icon-chevron-down"></use></svg>
+        </summary>
+        <div class="studio-body">
+          <div class="eq-grid">
+            <label class="vertical-control" title="Sub bass, 60 Hz, -12 to +12 dB"><output id="subBass-value">0</output><input id="subBass" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Sub bass gain in dB" /><span>Sub bass</span></label>
+            <label class="vertical-control" title="Bass, 180 Hz, -12 to +12 dB"><output id="bass-value">0</output><input id="bass" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Bass gain in dB" /><span>Bass</span></label>
+            <label class="vertical-control" title="Warmth, 350 Hz, -12 to +12 dB"><output id="warmth-value">0</output><input id="warmth" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Warmth gain in dB" /><span>Warmth</span></label>
+            <label class="vertical-control" title="Voice, 1.2 kHz, -12 to +12 dB"><output id="mid-value">0</output><input id="mid" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Voice gain in dB" /><span>Voice</span></label>
+            <label class="vertical-control" title="Clarity, 4.8 kHz, -12 to +12 dB"><output id="treble-value">0</output><input id="treble" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Clarity gain in dB" /><span>Clarity</span></label>
+            <label class="vertical-control" title="Air, 10 kHz, -12 to +12 dB"><output id="air-value">0</output><input id="air" type="range" min="-12" max="12" step="1" value="0" orient="vertical" aria-label="Air gain in dB" /><span>Air</span></label>
+          </div>
+
+
+
+          <div class="toggle-grid">
+            <label class="toggle-card">
+              <span><b>Voice focus</b><small>Even out loudness</small></span>
+              <input id="compressor" type="checkbox" /><i></i>
+            </label>
+            <label class="toggle-card">
+              <span><b>Mono</b><small>Merge both channels</small></span>
+              <input id="mono" type="checkbox" /><i></i>
+            </label>
+            <label class="toggle-card swap-card"><span><b>Swap channels</b><small>Switch left and right audio</small></span><input id="swapChannels" type="checkbox" /><i></i></label>
+          </div>
+        </div>
+      </details>
+
+
+
+      <footer>
+        <label class="compact-toggle">
+          <input id="overlay" type="checkbox" />
+          <i></i>
+          <span>Floating controls</span>
+        </label>
+        <label class="compact-toggle" title="Remember tuning for each audio page"><input id="footer-remember" type="checkbox" /><i></i><span>Remember</span></label><label class="compact-toggle" title="Save separate tuning for this track"><input id="footer-track" type="checkbox" /><i></i><span>This track</span></label><label class="compact-toggle" title="Automatically restore saved tuning"><input id="footer-auto-apply" type="checkbox" /><i></i><span>Auto-apply</span></label>
+        <label class="compact-toggle" title="Open TuneShift in Chrome’s sidebar"><input id="footer-sidebar" type="checkbox" role="switch" /><i></i><span>Sidebar</span></label>
+      </footer>
+    </main>
+
+    <dialog class="edit-dialog" id="profile-dialog" aria-labelledby="profile-dialog-title">
+      <h2 id="profile-dialog-title">Save Quick profile</h2>
+      <label for="profile-name">Name</label>
+      <input id="profile-name" type="text" maxlength="24" autocomplete="off" />
+      <p id="profile-error" role="status"></p>
+      <div class="dialog-actions"><button id="profile-delete" type="button" hidden>Delete</button><button id="profile-cancel" type="button">Cancel</button><button id="profile-confirm" type="button">Save</button></div>
+    </dialog>
+    <dialog class="edit-dialog" id="loop-dialog" aria-labelledby="loop-dialog-title">
+      <h2 id="loop-dialog-title">Edit loop points</h2>
+      <p>Enter mm:ss.xx. Use arrow keys to nudge by 0.1 seconds.</p>
+      <label for="loop-edit-a">A</label><input id="loop-edit-a" type="text" inputmode="decimal" placeholder="00:00.00" />
+      <label for="loop-edit-b">B</label><input id="loop-edit-b" type="text" inputmode="decimal" placeholder="00:00.00" />
+      <p id="loop-error" role="status"></p>
+      <div class="dialog-actions"><button id="loop-cancel" type="button">Cancel</button><button id="loop-confirm" type="button">Save</button></div>
+    </dialog>
+    <dialog class="edit-dialog" id="cue-dialog" aria-labelledby="cue-dialog-title">
+      <h2 id="cue-dialog-title">Edit cue</h2>
+      <p>Enter a time in mm:ss.xx. Use arrow keys to nudge by 0.1 seconds.</p>
+      <label for="cue-edit-name">Name</label><input id="cue-edit-name" type="text" maxlength="40" autocomplete="off" />
+      <label for="cue-edit-time">Time</label><input id="cue-edit-time" type="text" inputmode="decimal" placeholder="00:00.00" />
+      <p id="cue-error" role="status"></p>
+      <div class="dialog-actions"><button id="cue-cancel" type="button">Cancel</button><button id="cue-confirm" type="button">Save</button></div>
+    </dialog>
+    <div class="blocked-view" id="blocked-view" hidden>
+      <div class="blocked-icon"><svg class="ui-icon"><use href="#icon-shield-alert"></use></svg></div>
+      <h2>This page is protected</h2>
+      <p>Chrome does not allow extensions to run on internal pages or the Web Store. Open a regular page with audio or video, then click the TuneShift toolbar icon to allow access.</p>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span id="toast-message"></span>
+      <button id="toast-action" type="button" hidden></button>
+    </div>
+    <script src="../assets/ui/dropdowns.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

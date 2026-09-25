@@ -1,0 +1,15 @@
+{
+  "name": "tuneshift-extension",
+  "version": "1.20.3",
+  "private": true,
+  "description": "Smooth media speed, whole-step transpose, fractional pitch and audio controls for Chrome.",
+  "scripts": {
+    "check": "node scripts/validate.mjs && node scripts/validate-practice.mjs && node scripts/validate-bpm.mjs && node scripts/validate-v116.mjs && node scripts/validate-studio.mjs && node scripts/validate-tab-effects.mjs && node scripts/validate-sidebar.mjs && node scripts/validate-settings.mjs && node scripts/validate-repeat.mjs && node scripts/validate-v119.mjs && node scripts/validate-v120.mjs && node scripts/validate-optimizations.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@soundtouchjs/audio-worklet": "^2.1.0",
+    "lucide-static": "^1.31.0",
+    "realtime-bpm-analyzer": "5.0.15"
+  }
+}

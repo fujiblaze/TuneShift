@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TuneShift settings</title>
+    <script src="../popup/appearance.js"></script>
+    <link rel="stylesheet" href="options.css" />
+    <link rel="stylesheet" href="../assets/ui/dropdowns.css" />
+    <link rel="stylesheet" href="../assets/ui/viewport.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <button id="settings-back" class="settings-back" type="button" aria-label="Back to controls" title="Back to controls" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7M5 12h14" /></svg></button>
+        <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M2 10v3" />
+  <path d="M6 6v11" />
+  <path d="M10 3v18" />
+  <path d="M14 8v7" />
+  <path d="M18 5v13" />
+  <path d="M22 10v3" />
+</svg></div>
+        <div><h1>Settings</h1><p>TuneShift preferences</p></div>
+      </header>
+
+      <section class="hero">
+        <span>Preferences</span>
+        <h2>Playback preferences</h2>
+        <p>Choose how TuneShift remembers pages, responds to shortcuts, and displays its active state.</p>
+      </section>
+
+      <div class="settings-grid">
+        <section class="card">
+          <div class="card-heading"><div><h3>Behavior</h3><p>How controls carry between sessions</p></div><b>01</b></div>
+          <label class="setting"><span><strong>Remember each page</strong><small>Keep a separate control profile for every exact media URL.</small></span><input id="rememberSites" type="checkbox" /><i></i></label>
+          <label class="setting"><span><strong>Apply saved profile</strong><small>Restore that page’s controls when TuneShift opens.</small></span><input id="autoApply" type="checkbox" /><i></i></label>
+          <label class="setting"><span><strong>Show toolbar badge</strong><small>Display playback speed or FX while active.</small></span><input id="showBadge" type="checkbox" /><i></i></label>
+          <label class="select-setting"><span><strong>Appearance</strong><small>Use the Pastel Dreamland palette in light or dark mode.</small></span><select id="themeMode"><option value="dark">Dark mode</option><option value="light">Light mode</option></select></label>
+        </section>
+
+        <section class="card">
+          <div class="card-heading"><div><h3>Control steps</h3><p>Fine-tune button and shortcut behavior</p></div><b>02</b></div>
+          <label class="select-setting"><span><strong>Speed shortcut step</strong><small>Amount changed by each shortcut press.</small></span><select id="speedStep"><option value="0.05">0.05×</option><option value="0.1">0.10×</option><option value="0.25">0.25×</option><option value="0.5">0.50×</option></select></label>
+          <label class="select-setting"><span><strong>Seek distance</strong><small>Time moved by the transport buttons.</small></span><select id="seekStep"><option value="5">5 seconds</option><option value="10">10 seconds</option><option value="15">15 seconds</option><option value="30">30 seconds</option></select></label>
+          <button class="primary" id="shortcuts">Customize keyboard shortcuts <span>↗</span></button>
+        </section>
+
+
+        <section class="card about-card">
+          <div class="card-heading"><div><h3>Private by design</h3><p>No account, analytics, or remote code</p></div><b>03</b></div>
+          <p class="privacy-copy">TuneShift controls a tab after you invoke it. On open.spotify.com, a local compatibility hook runs at page load to detect detached media players. Preferences, Quick profiles, saved page and track profiles, and BPM data stay in Chrome's local extension storage. Tab effects capture audio only when you enable them. Audio is processed locally and is never recorded or uploaded. <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></p>
+          <div class="feature-tags"><span>Manifest V3</span><span>Page-local DSP</span><span>Opt-in tab effects</span><span>Local storage</span></div>
+          <div class="credits">Sora and DSEG fonts are included under the SIL Open Font License 1.1. SoundTouchJS AudioWorklet is included under MPL-2.0. Lucide interface icons are included under the ISC license.</div>
+        </section>
+        <section class="card developer-card" aria-labelledby="developer-credits-title">
+          <div class="card-heading"><div><h3 id="developer-credits-title">Credits</h3></div><b>04</b></div>
+          <div class="developer-profile">
+            <img class="developer-avatar" src="../assets/fujimori-avatar.jpeg" width="64" height="64" alt="Fujimori's avatar" />
+            <div class="developer-details">
+              <strong class="developer-name">Fujimori</strong>
+              <span class="developer-role">TuneShift developer</span>
+              <div class="developer-contact"><span>Discord IGN</span><span class="developer-handle">@fujimori_</span></div>
+              <a class="developer-website" href="https://fujiverse.dev" target="_blank" rel="noopener noreferrer">fujiverse.dev<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" /></svg></a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="save-state" id="save-state" role="status" aria-live="polite">Settings saved</div>
+    </main>
+    <script src="../assets/ui/dropdowns.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
