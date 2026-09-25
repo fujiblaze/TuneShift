@@ -25,14 +25,15 @@ TuneShift lets you change playback speed without changing pitch, transpose audio
 
 The Speed card has a second page for the larger BPM display, tap tempo, and half/double corrections. Cue times can be edited precisely in a popup.
 
-## Install from this repository
+## Install the release
 
-1. Download and extract the repository ZIP from GitHub, or clone the repository.
-2. Open `chrome://extensions` and turn on **Developer mode**.
-3. Click **Load unpacked** and select the folder containing `manifest.json`.
-4. Open a regular HTTP or HTTPS page with audio or video, start playback, then open TuneShift.
+1. Download **TuneShift-v1.20.3.zip** from the [latest release](https://github.com/fujiblaze/TuneShift/releases/latest).
+2. Extract the ZIP to a folder you will keep. Chrome loads the files from that folder.
+3. Open `chrome://extensions` and turn on **Developer mode**.
+4. Click **Load unpacked** and select the extracted folder containing `manifest.json`.
+5. Open a regular HTTP or HTTPS page with audio or video, start playback, then open TuneShift.
 
-The bundled runtime files are already in the repository. You do not need `npm install` to load the extension. After updating the files, click **Reload** on the extension card and refresh any open media tabs.
+To update, replace the extracted files, click **Reload** on TuneShift's extension card, and refresh open media tabs. Developers can also clone this repository and load its root folder directly. The bundled runtime files do not need `npm install`.
 
 > Chrome restricts extensions on internal pages and the Chrome Web Store. For local files, enable **Allow access to file URLs** in TuneShift's extension details.
 
